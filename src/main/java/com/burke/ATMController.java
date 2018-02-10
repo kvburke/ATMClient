@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Scope(value="singleton")
 @Controller
-public class WelcomeController {
+public class ATMController {
 
 	
 	@Autowired
