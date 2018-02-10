@@ -41,14 +41,8 @@ public class MessageSender {
 		// MessageProducer is used for sending messages to the queue.
 		MessageProducer producer = session.createProducer(destination);
 		
-		// We will send a small text message saying 'Hello World!!!' 
-		Account object1= new Account();
-		Account object2= new Account();
-		Account object3= new Account();
-		Account object4= new Account();
-		
-		
-		
+	
+		Account object1= new Account();	
 		object1.setAccountnumber(accountnumber);
 		object1.setMessage(message);
 		object1.setHistory(null);
@@ -56,46 +50,13 @@ public class MessageSender {
 		object1.setSavingsbalance(savingsbalance);
 		object1.setCurrentbalance(currentbalance);
 
-		
-	//	object2.setAccountnumber(1001);
-	//	object2.setMessage("1001abcd");
-	//	object2.setHistory(null);
-	//	object2.setCreditscore(500);
-	//	object2.setSavingsbalance(300);
-	//	object2.setCurrentbalance(600);
-		
-		
-	//	object3.setAccountnumber(1002);
-	//	object3.setMessage("1002abcd");
-	//	object3.setHistory(null);
-	//	object3.setCreditscore(700);
-	//	object3.setSavingsbalance(500);
-	//	object3.setCurrentbalance(300);
-		
-		
-	//	object4.setAccountnumber(1003);
-	//	object4.setMessage("1003abcd");
-	//	object4.setHistory(null);
-	//	object4.setCreditscore(800);
-	//	object4.setSavingsbalance(1500);
-	//	object4.setCurrentbalance(3300);
-		
-		
-		
 		ObjectMessage obj1= session.createObjectMessage();
 		obj1.setObject(object1);
-	//	ObjectMessage obj2= session.createObjectMessage();
-	//	obj2.setObject(object2);
-	//	ObjectMessage obj3= session.createObjectMessage();
-	//	obj3.setObject(object3);
-	//	ObjectMessage obj4= session.createObjectMessage();
-	//	obj4.setObject(object4);
+
 	
 		// Here we are sending our message!
 		producer.send(obj1);
-	//	producer.send(obj2);
-	//	producer.send(obj3);
-	//	producer.send(obj4);
+	
 		try {
 			Thread.sleep(100000);
 		} catch (InterruptedException e) {

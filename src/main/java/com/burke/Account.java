@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Account implements Serializable {
-	private static final long serialVersionUID = -501896252367061196L;
+private static final long serialVersionUID = -501896252367061196L;
 private int accountnumber;
 private String username;
 private String password;
