@@ -18,8 +18,8 @@ public class ATMController {
 		
 	
 	@RequestMapping(value="/transaction", method=RequestMethod.POST)
-	public void transaction(@RequestParam("accountnumber")int accountnumber,@RequestParam("message")String message,@RequestParam("creditscore")int creditscore,@RequestParam("savingsbalance")int savingsbalance, @RequestParam("currentbalance")int currentbalance) throws JMSException {
-			sender.sendmessage(accountnumber, message, creditscore, savingsbalance, currentbalance);
+	public void transaction(@RequestParam("accountnumber")int accountnumber,@RequestParam("message")String message,@RequestParam("deposit")double deposit,@RequestParam("withdraw")double withdraw, @RequestParam("currentbalance")int currentbalance) throws JMSException {
+			sender.sendmessage(accountnumber, message, deposit, withdraw, currentbalance);
 		
 	}
 	

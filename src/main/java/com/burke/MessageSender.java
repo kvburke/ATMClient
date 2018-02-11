@@ -24,7 +24,7 @@ public class MessageSender {
 	// default broker URL is : tcp://localhost:61616"
 	private static String subject = "JCG_QUEUE"; // Queue Name.You can create any/many queue names as per your requirement.	
 	
-	public void sendmessage(int accountnumber, String message, int creditscore, int savingsbalance, int currentbalance) throws JMSException {		
+	public void sendmessage(int accountnumber, String message, double deposit, double withdraw, int currentbalance) throws JMSException {		
 		// Getting JMS connection from the server and starting it
 		ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(url);
 		Connection connection = connectionFactory.createConnection();
@@ -46,8 +46,8 @@ public class MessageSender {
 		object1.setAccountnumber(accountnumber);
 		object1.setMessage(message);
 		object1.setHistory(null);
-		object1.setCreditscore(creditscore);
-		object1.setSavingsbalance(savingsbalance);
+		object1.setWithdraw(withdraw);
+		object1.setDeposit(deposit);
 		object1.setCurrentbalance(currentbalance);
 
 		ObjectMessage obj1= session.createObjectMessage();

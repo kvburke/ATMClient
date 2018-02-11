@@ -1,18 +1,6 @@
 /**
  * 
  */
-//var form = document.getElementById("atm");
-//var accountnumberField = form.elements["accountnumber"];
-//var messageField = form.elements["message"];
-//var creditscoreField = form.elements["creditscore"];
-//var savingsbalanceField = form.elements["savingsbalance"];
-//var currentbalanceField = form.elements["currentbalance"];
-
-
-
-
-
-
 
 
 $('#submit').click(function() {
@@ -20,8 +8,8 @@ $('#submit').click(function() {
 	
 	var accountnumberField = $("#accountnumber").val();
 	var messageField = $("#message").val();
-	var creditscoreField = $("#creditscore").val();
-	var savingsbalanceField = $("#savingsbalance").val();
+	var depositField = $("#deposit").val();
+	var withdrawField = $("#withdraw").val();
 	var currentbalanceField = $("#currentbalance").val();
 	
 	
@@ -36,7 +24,7 @@ $('#submit').click(function() {
 	
 	
     
-	$.post("http://localhost:8888/transaction", {accountnumber: accountnumberField, message: messageField, creditscore: creditscoreField, savingsbalance: savingsbalanceField, currentbalance: currentbalanceField});
+	$.post("http://localhost:8888/transaction", {accountnumber: accountnumberField, message: messageField, deposit: depositField, withdraw: withdrawField, currentbalance: currentbalanceField});
 
 	
 	
